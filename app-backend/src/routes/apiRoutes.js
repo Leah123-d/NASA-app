@@ -5,7 +5,7 @@ import server from 'db.js'
 
 const router = express.Router();
 
-const token = {authToken};
+// const {authToken} = process.env;
 
 //send some data to the server for the animals to be created 
 
