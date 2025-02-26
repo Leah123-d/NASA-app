@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 
 dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 app.use(bodyParser.json()) //Middleware to parse JSON
@@ -14,29 +14,30 @@ const {authToken} = process.env;
 
 // app.use('/',) will be connected to routes 
 
-app.get('/', (req,res) => { //a connection to the homepage
-  res.send("Hello World")
+app.get('/api', (req,res) => { //creates an endpoint for the route/api
+  res.json({ message: 'Hello from ExpressJS' })
 })
 
-async function getData() {
-  try{
-    const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2017-07-08&end_date=2017-07-10`);
+
+// async function getData() {
+//   try{
+//     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2017-07-08&end_date=2017-07-10`);
     
-    if(!response.ok){
-      throw new Error(`HTTP error: ${response.status}`)
-    }
+//     if(!response.ok){
+//       throw new Error(`HTTP error: ${response.status}`)
+//     }
 
-    const text = await response.text();
-    console.log("Raw Response:", text); 
-    const data = JSON.parse(text); // If it's a valid JSON string
-    console.log(data.explination);
-  }
-  catch (error){
-    console.error('Error:', error);
-  }
-}
+//     const text = await response.text();
+//     console.log("Raw Response:", text); 
+//     const data = JSON.parse(text); // If it's a valid JSON string
+//     console.log(data.explination);
+//   }
+//   catch (error){
+//     console.error('Error:', error);
+//   }
+// }
 
-getData()
+// getData()
 
 // app.get('/data', (req,res) => { //a connection to the homepage
 //   res.send("Hello Data")
