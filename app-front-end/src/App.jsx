@@ -1,0 +1,17 @@
+import './App.css'
+import Navbar2 from './components/Navbar2.jsx'
+import Card from './components/Card.jsx'
+
+function App() {
+
+
+  return (
+    <>
+      {/* <h1 className="text-3xl font-bold underline" >Hello World</h1> */}
+      <Navbar2 />
+      <Card />
+    </>
+  )
+}
+
+export default App
