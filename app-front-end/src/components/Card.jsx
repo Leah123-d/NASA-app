@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import galaxy from '/public/galaxy.jpg'; 
+
+import galaxy from '/galaxy.jpg'; 
 //the above is  placeholder, remove when dynamically implement the media
 
 function Card(){
-    const[search, setSearch] = useState('');
+    
+
+    
 
     return(
         <>
