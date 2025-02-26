@@ -8,4 +8,13 @@ export default defineConfig({
     react(),
     tailwindcss(),
     ],
-})
+    server: {
+      //setting up a proxy to direct all API calls to nodejs API
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3000',
+          changeOrigin: true
+        }
+      }
+    }
+});
