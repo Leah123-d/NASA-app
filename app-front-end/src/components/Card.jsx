@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream
 
-import galaxy from '/galaxy.jpg'; 
-//the above is  placeholder, remove when dynamically implement the media
-
-=======
->>>>>>> Stashed changes
 function Card(){
-    
-
-    
-
     return(
         <>
         {/* add margins to elements to prevent elements from being close  */}
