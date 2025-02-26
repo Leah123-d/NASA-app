@@ -9,13 +9,13 @@ function Card(){
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                    Card Title
-                    <div className="badge badge-secondary">NEW</div>
+                    HOLD FOR API TITLE
+                    <div className="badge badge-secondary">HOLD FOR API MEDIA TYPE ICON</div>
+                    <div className="badge badge-secondary">HOLD FOR API PLANET TRUE/FALSE ICON</div>
                     </h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                    <p>HOLD API DESCRIPTION</p>
                     <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                    <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
                     </div>
             </div>
             </div>

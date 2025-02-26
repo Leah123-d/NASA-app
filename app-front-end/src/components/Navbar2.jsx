@@ -8,7 +8,9 @@ function Navbar2(){
                 <a className="btn btn-ghost text-xl">APOD</a>
             </div>
             <div className="navbar-end">
+                <label>start date</label>
                <input type="date" className="input h-10 w-35"/>
+               <label>end date</label>
                <input type="date" className="input h-10 w-35"/>
                <button className="btn btn-outline btn-primary">Search</button>
                 {/* change magnify icon to a date picker */}
