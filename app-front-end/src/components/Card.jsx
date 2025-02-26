@@ -1,10 +1,13 @@
+import galaxy from '/public/galaxy.jpg';
+
 function Card(){
     return(
         <>
+        {/* add margins to elements to prevent elements from being close  */}
             <div className="card bg-base-100 shadow-sm" >
                 <figure>
                     <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    src={galaxy}
                     alt="Shoes" />
                 </figure>
                 <div className="card-body">
