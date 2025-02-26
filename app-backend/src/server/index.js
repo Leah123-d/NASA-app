@@ -15,8 +15,9 @@ const {authToken} = process.env;
 // app.use('/',) will be connected to routes 
 
 app.get('/api', (req,res) => { //creates an endpoint for the route/api
-  res.send("Hello API World")
+  res.json({ message: 'Hello from ExpressJS' })
 })
+
 
 // async function getData() {
 //   try{

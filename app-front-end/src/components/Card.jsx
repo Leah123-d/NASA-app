@@ -1,13 +1,11 @@
-import galaxy from '/public/galaxy.jpg';
-
-function Card(){
+function Card({connectToBackend}){
     return(
         <>
         {/* add margins to elements to prevent elements from being close  */}
             <div className="card bg-base-100 shadow-sm" >
                 <figure>
                     <img
-                    src={galaxy}
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                     alt="Shoes" />
                 </figure>
                 <div className="card-body">
@@ -20,6 +18,12 @@ function Card(){
                     <div className="card-actions justify-end">
                     <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
                     </div>
+                    <div className="App">
+                <h1>React Website with an Express backend</h1>
+                <button  onClick={connectToBackend}>
+                    Send Request to Backend
+                </button>
+                </div>
             </div>
             </div>
             

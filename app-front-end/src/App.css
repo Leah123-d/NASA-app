@@ -35,4 +35,8 @@
     --depth: 0;
     --noise: 0;
   }
+
+  .App{
+    background-color: "grey";
+  }
   
