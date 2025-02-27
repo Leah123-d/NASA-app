@@ -35,7 +35,7 @@ app.get('/api', (req,res) => { //creates an endpoint for the route/api
 //   //this is where I can return specific details of the object by calling the key and returing the value
 //   .catch(error => console.error(error)); //if we get a response that is not valid this error will be returned 
 
-
+//can I place this in a get? 
 
 // fetchData()
 

@@ -5,9 +5,10 @@ import Card from './components/Card.jsx'
 import Footer from './components/Footer.jsx'
 import { useState } from 'react';
 import dotenv from 'dotenv';
+// const { authToken } = process.env;
 
 function App() {
-  const { authToken } = process.env;
+  
   const [data, setData] = useState('');
 
   async function fetchData() {
@@ -33,6 +34,8 @@ function App() {
 
   // const handleClick =() => {
   // } missing the part to connect the calls from the front end to display on the front end, I might need a get request
+
+  //I'll need to figure out where to keep the files and how they are communicating with each other
 
 
   return (
