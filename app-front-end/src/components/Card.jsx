@@ -23,6 +23,8 @@ function Card(){
                     <div className="card-actions justify-end">
                     <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
                     </div>
+                    <input type="text" id="title" placeholder="enter title"></input>
+                    <button></button>
                 {/* <div className="App">
                     <h1>React Website with an Express backend</h1>
                     <button  onClick={connectToBackend}>
