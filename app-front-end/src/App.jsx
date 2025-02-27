@@ -3,7 +3,7 @@ import './App.css'
 import Navbar2 from './components/Navbar2.jsx'
 import Card from './components/Card.jsx'
 import Footer from './components/Footer.jsx'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [data, setData] = useState('');
@@ -17,10 +17,19 @@ function App() {
 
 
   const NASADatafromBE = () => {
+    console.log("start of fetch func")
     fetch('/api/NASAData')
+    console.log("in fetch func")
       .then((res) => res.json())
-      .then((info) => setInfo(info.message));
-  }
+      .then((res) => {
+        console.log(res);
+        setInfo(res);
+      });
+  };
+
+  useEffect(() => {
+    NASADatafromBE();
+  }, []);
 
   // const handleClick =() => {
   // } missing the part to connect the calls from the front end to display on the front end, I might need a get request

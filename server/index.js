@@ -23,17 +23,11 @@ app.get('/api', (req,res) => { //creates an endpoint for the route/api
 })
 
 
-
 // fetchData()
 
 //fetch will return an object at the URL specificed, the API token is entered as a variable configured in the .env file 
 //our data is assigned to the response returning it as .json
 //then we can console.log that data to check it
-
-app.get('/api/NASAData', (req,res) => { //creates an endpoint for the route/api
-  console.log('I have NASA data');
-  res.json(NASAData);
-})
 
 const NASAData = async () =>  {
   try{
@@ -43,18 +37,25 @@ const NASAData = async () =>  {
 
     if(!response.ok){
       throw new Error("Media not found");
-    } else{ const data = await response.json();//the response is converted to json and this returns a promise 
-    console.log(data);
     }
-
+    const data = await response.json();//the response is converted to json and this returns a promise 
+    console.log(data);
   }
   catch(error){
     console.log(error);
   }
-
 }
 
-NASAData();
+//NASAData(); //have to call the function to make it run 
+
+app.get('/api/NASAData', (req,res) => { //creates an endpoint for the route/api
+  console.log('I have NASA data');
+  console.log(NASAData);
+  res.json(NASAData());
+})
+
+
+
 
 // fetch(`https://api.nasa.gov/planetary/apod?api_key=${authToken}`)
 //   .then(response => {
