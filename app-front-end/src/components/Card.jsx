@@ -9,7 +9,7 @@ function Card(){
             <div className="card bg-base-100 shadow-sm" >
                 <figure>
                     <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    src="https://apod.nasa.gov/apod/image/2502/M35_NGC2158_1024.jpg"
                     alt="Shoes" />
                     {/* HOLD FOR API MEDIA DISPLAY */}
                 </figure>

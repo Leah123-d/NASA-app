@@ -19,9 +19,19 @@ app.get('/api', (req,res) => { //creates an endpoint for the route/api
 })
 
 
+fetch(`https://api.nasa.gov/planetary/apod?api_key=${authToken}`)
+  .then(response => response.json()) //provided with a response object, once I get the response convert to JSON format
+  .then(data => console.log(data.url)) // I might need to map this since there is an array of objects
+  //this is where I can return specific details of the object by calling the key and returing the value
+  .catch(error => console.error(error));
+
+
+
+// getData()
+
 // async function getData() {
 //   try{
-//     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2017-07-08&end_date=2017-07-10`);
+//     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${authToken}&start_date=2017-07-08&end_date=2017-07-10`);
     
 //     if(!response.ok){
 //       throw new Error(`HTTP error: ${response.status}`)
@@ -29,15 +39,15 @@ app.get('/api', (req,res) => { //creates an endpoint for the route/api
 
 //     const text = await response.text();
 //     console.log("Raw Response:", text); 
-//     const data = JSON.parse(text); // If it's a valid JSON string
+//     const data = bodyParser.json(text); // If it's a valid JSON string
 //     console.log(data.explination);
 //   }
-//   catch (error){
+//   .catch(error){
 //     console.error('Error:', error);
 //   }
 // }
 
-// getData()
+
 
 // app.get('/data', (req,res) => { //a connection to the homepage
 //   res.send("Hello Data")
