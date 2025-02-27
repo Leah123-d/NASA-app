@@ -7,11 +7,19 @@ import { useState } from 'react';
 
 function App() {
   const [data, setData] = useState('');
+  const [info, setInfo] = useState('');
 
   const connectToBackend = () => {
     fetch('/api')
       .then((res) => res.json())
       .then((data) => setData(data.message));
+  }
+
+
+  const NASADatafromBE = () => {
+    fetch('/api/NASAData')
+      .then((res) => res.json())
+      .then((info) => setInfo(info.message));
   }
 
   // const handleClick =() => {
@@ -27,10 +35,10 @@ function App() {
 
       <div className="App">
                     <h1>React Website with an Express backend</h1>
-                    <button  onClick={connectToBackend}>
+                    <button  onClick={NASADatafromBE}>
                     Send Request to Backend
                     </button>
-                    <p>{data}</p>
+                    <p>{info}</p>
                     
                     {/* button is working, but now i have to see how I can get a response or if my env variables are reading correctly */}
                 </div>
