@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json()) //Middleware to parse JSON
 
-const {authToken} = process.env;
+const { authToken } = process.env;
 
 // app.use('/',) will be connected to routes 
 

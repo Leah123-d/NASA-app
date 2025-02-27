@@ -1,3 +1,4 @@
+import React from "react";
 import './App.css'
 import Navbar2 from './components/Navbar2.jsx'
 import Card from './components/Card.jsx'
@@ -17,15 +18,16 @@ function App() {
   return (
     <>
       {/* <h1 className="text-3xl font-bold underline" >Hello World</h1> */}
-      <div className="App">
-      <h1>React Website with an Express backend</h1>
-      <button  onClick={connectToBackend}>
-        Send Request to Backend
-
-      </button>
       {/* Render the newly fetched data inside data */}
-      <p>{data}</p>
-    </div>
+
+      <div className="App">
+                    <h1>React Website with an Express backend</h1>
+                    <button  onClick={connectToBackend}>
+                    Send Request to Backend
+                    </button>
+                    <p>{data}</p>
+                </div>
+
       <Navbar2 />
       <Card />
       <Footer />

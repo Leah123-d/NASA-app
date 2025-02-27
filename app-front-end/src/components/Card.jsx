@@ -1,4 +1,8 @@
-function Card({connectToBackend}){
+import React from "react";
+import { useState } from 'react';
+
+function Card(){
+    
     return(
         <>
         {/* add margins to elements to prevent elements from being close  */}
@@ -18,12 +22,13 @@ function Card({connectToBackend}){
                     <div className="card-actions justify-end">
                     <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
                     </div>
-                    <div className="App">
-                <h1>React Website with an Express backend</h1>
-                <button  onClick={connectToBackend}>
+                {/* <div className="App">
+                    <h1>React Website with an Express backend</h1>
+                    <button  onClick={connectToBackend}>
                     Send Request to Backend
-                </button>
-                </div>
+                    </button>
+                    <p>{data}</p>
+                </div> */}
             </div>
             </div>
             
