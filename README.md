@@ -15,7 +15,12 @@ React
 Express.js
 Node.js
 VSCode 
- 
+
+### Additional Resources
+A [website](https://apod.nasa.gov/apod/ap250216.html) displaying Astronomy Picture of the Day data
+
+A [tutorial](https://liderrick.github.io/apodHowTo/index.html) for working with Astronomy Picture of the Day
+
 ## Installation Instructions
 
 1. Create a folder on your computer
