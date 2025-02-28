@@ -6,55 +6,56 @@ import Footer from './components/Footer.jsx'
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [data, setData] = useState('');
-  const [info, setInfo] = useState('');
 
-  const connectToBackend = () => {
-    fetch('/api')
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }
-
-
-  const NASADatafromBE = () => {
-    console.log("start of fetch func")
-    fetch('/api/NASAData')
-    console.log("in fetch func")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        setInfo(res);
-      });
-  };
+  const[date, setDate] = useState(""); //state to store the user's input
+  const[archiveData, setArchiveData] = useState(null);
+  const[APOD, setAPOD] = useState([]);
 
   useEffect(() => {
-    NASADatafromBE();
-  }, []);
+    const FetchAPOD = async () => {
+    try {
+      const res = await fetch('/api');
+      const data = await res.json();
+      console.log("APOD Data:", data)
+      setAPOD(data);
+    } catch(error) {
+      console.error('Error:', error);
+    }
+  };
+  FetchAPOD(); }, []);
 
-  // const handleClick =() => {
-  // } missing the part to connect the calls from the front end to display on the front end, I might need a get request
 
-  //I'll need to figure out where to keep the files and how they are communicating with each other
+  const fetchArchive = async (e) => {
+		e.preventDefault();
+  try{
+    const response = await fetch(`/api/archives?date=${date}`);
+    const data = await response.json();
+    return setArchiveData(data); //store data in state 
+    }catch(error){
+    console.error("error fetching data: ", error)
+  }}
 
-
+	const handleChange = (e) => {
+		e.preventDefault();
+		setDate(e.target.value);
+	}
+	
+  
+  
   return (
     <>
-      {/* <h1 className="text-3xl font-bold underline" >Hello World</h1> */}
-      {/* Render the newly fetched data inside data */}
-
-      <div className="App">
-                    <h1>React Website with an Express backend</h1>
-                    <button  onClick={NASADatafromBE}>
-                    Send Request to Backend
-                    </button>
-                    <p>{info}</p>
-                    
-                    {/* button is working, but now i have to see how I can get a response or if my env variables are reading correctly */}
-                </div>
-
-      <Navbar2 />
-      <Card />
-      <Footer />
+      <Navbar2 
+			date={date}
+			handleChange = {handleChange}
+			fetchArchive = {fetchArchive}
+			/>
+      <Card
+        archiveData = {archiveData}
+        APOD = {APOD} />
+      <Footer
+      archiveData = {archiveData}
+      APOD = {APOD}
+       />
     </>
   )
 }

@@ -1,42 +1,95 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { FaImage } from "react-icons/fa6";
+import { TbPlanet } from "react-icons/tb";
+import { TiVideo } from "react-icons/ti";
+import { TbWashDrycleanOff } from "react-icons/tb";
 
-function Card(){
+function Card({ archiveData, APOD }){ 
     
-    return(
-        <>
-        {/* add margins to elements to prevent elements from being close  */}
-            <div className="card bg-base-100 shadow-sm" >
-                <figure>
-                    <img
-                    src="https://apod.nasa.gov/apod/image/2502/M35_NGC2158_1024.jpg"
-                    alt="Shoes" />
-                    {/* HOLD FOR API MEDIA DISPLAY */}
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">
-                    HOLD FOR API TITLE
-                    <div className="badge badge-secondary">HOLD FOR API MEDIA TYPE ICON</div>
-                    <div className="badge badge-secondary">HOLD FOR API PLANET TRUE/FALSE ICON</div>
-                    </h2>
-                    <p>HOLD API DESCRIPTION</p>
-                    <div className="card-actions justify-end">
-                    <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
-                    </div>
-                    <input type="text" id="title" placeholder="enter title"></input>
-                    <button></button>
-                {/* <div className="App">
-                    <h1>React Website with an Express backend</h1>
-                    <button  onClick={connectToBackend}>
-                    Send Request to Backend
-                    </button>
-                    <p>{data}</p>
-                </div> */}
-            </div>
-            </div>
-            
-        </>
-    )
-}
+	return(
+		<>
+		{/* add margins to elements to prevent elements from being close  */}
+				<div className="card bg-base-100 shadow-sm" >
+					
+					{ archiveData ? (
+					<>
+						<figure>
+								<img
+								src={archiveData.url} alt={archiveData.title}/>
+						</figure>
+								<div className="card-body">
+								<h2 className="card-title">
+								{archiveData.title}
+
+								{/* not a planet symbol */}
+								{/* need to make these icons dynamically appear */}
+								<div className="badge badge-secondary">
+								<div className="badge badge-secondary">
+									{archiveData.media_type === "image" ? (
+										<>
+									 	<FaImage /> {archiveData.media_type} 
+									 </>
+									 ) : ( 
+									 <>
+									 <TiVideo /> {archiveData.media_type} 
+									 </>)
+									} </div>
+									</div>
+								<div className="badge badge-secondary">
+									{archiveData.explanation.includes("planet") ? (<TbPlanet />) : (<TbWashDrycleanOff />)
+									} </div>
+
+
+								</h2>
+								<p>{archiveData.explanation}</p>
+								<div className="card-actions justify-end">
+								<div className="badge badge-outline">{archiveData.url}</div>
+								</div>
+								</div>
+							</>
+							) : (
+						
+						
+						<>
+						<figure>
+								<img
+									src={APOD?.url} alt={APOD?.title}/>
+						</figure>
+						<div className="card-body">
+								<h2 className="card-title">
+								{APOD?.title}
+								{/* not a planet symbol */}
+								{/* need to make these icons dynamically appear */}
+								<div className="badge badge-secondary">
+									{APOD?.media_type === "image" ? (
+										<>
+									 	<FaImage /> {APOD?.media_type} 
+									 </>
+									 ) : ( 
+									 <>
+									 <TiVideo /> {APOD?.media_type} 
+									 </>)
+									} </div>
+								<div className="badge badge-secondary">
+									{APOD?.explination?.includes("planet") ? (<TbWashDrycleanOff />) : (<TbPlanet />)
+									
+									}
+								</div>
+								</h2>
+								<p>{APOD?.explanation}</p>
+								<div className="card-actions justify-end">
+								<div className="badge badge-outline">{APOD?.url}</div>
+
+								</div>
+								</div>
+								
+							</>	
+							)}
+				</div>
+				
+				</>
+			);
+	}
 
 export default Card

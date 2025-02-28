@@ -36,7 +36,8 @@
     --noise: 0;
   }
 
-  .App{
-    background-color: "grey";
+  @media (max-width: 412) {
+    #figure{
+      display: none;
+    }
   }
-  
