@@ -5,7 +5,7 @@ function Card(){
 
     const[APOD, setAPOD] = useState([]);
 
-    const fetchAPOD = () => {useEffect(() => {
+    const FetchAPOD = () => {useEffect(() => {
       fetch('/api')
       .then((res) => {
         return res.json()
@@ -25,19 +25,18 @@ function Card(){
             <div className="card bg-base-100 shadow-sm" >
                 <figure>
                     <img
-                    onChange={fetchAPOD()} src={APOD.url} alt={APOD.title} width={1000}
+                    onChange={FetchAPOD()} src={APOD.url} alt={APOD.title}
                     />
-                    {/* HOLD FOR API MEDIA DISPLAY */}
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                    HOLD FOR API TITLE
-                    <div className="badge badge-secondary">HOLD FOR API MEDIA TYPE ICON</div>
+                    {APOD.title}
+                    <div className="badge badge-secondary">{APOD.media_type}</div>
                     <div className="badge badge-secondary">HOLD FOR API PLANET TRUE/FALSE ICON</div>
                     </h2>
-                    <p>HOLD API DESCRIPTION</p>
+                    <p>{APOD.explanation}</p>
                     <div className="card-actions justify-end">
-                    <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
+                    <div className="badge badge-outline">{APOD.url}</div>
                     </div>
 
             </div>
