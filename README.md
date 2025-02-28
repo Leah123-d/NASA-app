@@ -1,17 +1,74 @@
-Welcome to NASA-app! 
+# Welcome to NASA-app! 
+
+## Project Objective:
 
 This is my first full stack application build. 
 
-This project highlights the skills of React useState hooks and Express.js connection a backend to a front end to display calls to an API. 
+This project highlights the skills of React, useState hooks and Express.js.
 
-The API this project is connected to is NASA's APOD API 
-https://github.com/nasa/apod-api
+This project utilizes a backend server, created with Express.js and it is making calls to an API, displaying the data to the frontend.
+
+## Technologies used
+
+NASA [Astronomy Picture of the Day](https://github.com/nasa/apod-api)
+React 
+Express.js
+Node.js
+VSCode 
+ 
+## Installation Instructions
+
+1. Create a folder on your computer
+2. Clone this repository to the folder in step 1. 
+3. Open the cloned repository in a code editor 
 
 
-Installation
+### Environment setup: 
+
+At the root level of your project run the following installation commands 
+
+`````````
+npm install
+`````````
+`````````
+npm install dotenv
+`````````
+`````````
+npm install express
+`````````
 
 
-Troubleshooting Issues:
+### api key setup:
+
+1. Click this [link](https://api.nasa.gov/) to sign up for and sign up to generate a key
+2. Check your email for the api key
+3. In your code editor create a file named .env
+4. In .env enter the belwo replace the ENTERAPIKEYHERE with the API generated from NASA:
+
+`````````
+authToken = ENTERAPIKEYHERE
+`````````
+
+### How to run:
+For Backend
+1. cd into the folder server  
+2. In the terminal type ````````` node index.js`````````
+
+To confirm the backend is connection navigate to the URL `````````localhost:3000/api`````````
+
+For Frontend
+1. cd into the folder app-front-end
+2. In the terminal type ````````` npm run dev `````````
 
 
-Project Preview: 
+## Future Implementation: 
+
+Here are ideas that I would like to add to this project in the future: 
+1. Additional search options, there is an API that can take parameters of a start and end date to return a range of media
+2. Video media_types are not displaying correctly. The link is available, however, it is not rendering
+3. Implement media queries to make this page responsive and adjust to a variety of screen sizes
+
+
+## Project Preview: 
+
+Once the environment is set up a photo of the current day's Astronomy Picture of the Day should appear. 

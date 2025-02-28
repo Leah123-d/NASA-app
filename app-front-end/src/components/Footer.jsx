@@ -8,11 +8,11 @@ function Footer( { archiveData, APOD }) {
           <aside>
           {archiveData?.copyright ? (
             <div>
-            <p> {archiveData.copyright} </p>
+            <p> Copyright © {archiveData.copyright} </p>
             </div> 
           ) : APOD?.copyright ? (
             <div>
-            <p> {APOD.copyright} </p>
+            <p> Copyright ©  {APOD.copyright} </p>
             </div> 
           ) : 
           (
