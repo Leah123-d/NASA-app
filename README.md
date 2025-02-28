@@ -78,3 +78,6 @@ Here are ideas that I would like to add to this project in the future:
 ## Project Preview: 
 
 Once the environment is set up a photo of the current day's Astronomy Picture of the Day should appear. 
+
+![wk7projectoverview](https://github.com/user-attachments/assets/670cb668-6878-4776-aa80-c3c13d2e092c)
+
