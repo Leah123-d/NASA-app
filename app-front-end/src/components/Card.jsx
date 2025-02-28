@@ -1,21 +1,23 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 
-function Card(){
+function Card(){ 
 
-    //  function NASADatafromBE (){
-    //   useEffect(() => {
-    //     fetch('/api/NASAData')
-    //     .then((res) => res.json())
-    //     .then (data => {
-    //       console.log(data);
-    //     })
-    //     .catch(error => {
-    //       console.error('Error:', error);
-    //     });
-    //   }, []);
-    // }
-    
+    const[APOD, setAPOD] = useState([]);
+
+    const fetchAPOD = () => {useEffect(() => {
+      fetch('/api')
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        console.log(data);
+        setAPOD(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }, []);}
     
     return(
         <>
@@ -23,8 +25,8 @@ function Card(){
             <div className="card bg-base-100 shadow-sm" >
                 <figure>
                     <img
-                    src="https://apod.nasa.gov/apod/image/2502/M35_NGC2158_1024.jpg"
-                    alt="Shoes" />
+                    onChange={fetchAPOD()} src={APOD.url} alt={APOD.title} width={1000}
+                    />
                     {/* HOLD FOR API MEDIA DISPLAY */}
                 </figure>
                 <div className="card-body">
@@ -37,14 +39,7 @@ function Card(){
                     <div className="card-actions justify-end">
                     <div className="badge badge-outline">HOLD FOR API MEDIA URL</div>
                     </div>
-                    <input type="text" id="title" placeholder="enter title"></input>
-                    <button></button>
-                <div className="App">
-                    <h1>React Website with an Express backend</h1>
-                    {/* <button  onClick={NASADatafromBE}>
-                    Send Request to Backend
-                    </button> */}
-                </div>
+
             </div>
             </div>
             
