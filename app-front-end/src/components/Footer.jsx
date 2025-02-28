@@ -1,40 +1,27 @@
 import { useState, useEffect } from 'react';
 
-function Footer() {
+function Footer( { archiveData, APOD }) {
 
-   const[APOD, setAPOD] = useState([]);
-  
-      const FetchAPOD = () => {useEffect(() => {
-        fetch('/api')
-        .then((res) => {
-          return res.json()
-        })
-        .then((data) => {
-          console.log(data);
-          setAPOD(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-      }, []);}
+  return (
 
-  return(
-    <>    
       <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-      <aside>
-        
-          {APOD.copyright ? (
+          <aside>
+          {archiveData?.copyright ? (
+            <div>
+            <p> {archiveData.copyright} </p>
+            </div> 
+          ) : APOD?.copyright ? (
             <div>
             <p> {APOD.copyright} </p>
             </div> 
-          ) : (<p> copyright not found </p>)
-          }
+          ) : 
+          (
+          <p> copyright not found </p>
+          )}
        
       </aside>
       </footer>
-    </>
-
-    )
+      );
 
 }
 
