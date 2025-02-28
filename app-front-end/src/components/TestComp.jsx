@@ -4,7 +4,7 @@ const TestComp = () => {
     const[infos, setInfos] = useState([]);
 
         useEffect(() => {
-          fetch('/api/NASAData')
+          fetch('/api')
           .then((res) => {
             return res.json()
           })
@@ -21,6 +21,7 @@ const TestComp = () => {
      
   
             <img key={infos.id} src={infos.url} alt={infos.title} width={100} />
+            <p>{infos.title}, {infos.explanation}</p>
           </div>);
 
         // I feee like this is close, why is my object empty?
