@@ -10,9 +10,9 @@ function App() {
   const[date, setDate] = useState(""); //state to store the user's input
   const[archiveData, setArchiveData] = useState(null);
   const[APOD, setAPOD] = useState([]);
-
+  //We are fetching the data that is at the url /api which at the backend is connection to the NASA API
   useEffect(() => {
-    const FetchAPOD = async () => {
+    const FetchAPOD = async () => { 
     try {
       const res = await fetch('/api');
       const data = await res.json();
@@ -24,12 +24,13 @@ function App() {
   };
   FetchAPOD(); }, []);
 
+  //We are fetching the data that is at the url /api/archives which at the backend is connection to the NASA API archives
+  // const data = await response.json();
 
   const fetchArchive = async (e) => {
 		e.preventDefault();
-  try{
-    const response = await fetch(`/api/archives?date=${date}`);
-    const data = await response.json();
+    try{
+    const response = await fetch(`/api/archives?date=${date}`); 
     return setArchiveData(data); //store data in state 
     }catch(error){
     console.error("error fetching data: ", error)
@@ -39,8 +40,6 @@ function App() {
 		e.preventDefault();
 		setDate(e.target.value);
 	}
-	
-  
   
   return (
     <>
