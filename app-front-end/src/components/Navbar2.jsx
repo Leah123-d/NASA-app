@@ -3,9 +3,10 @@ import { useState } from 'react'
 
 function Navbar2(){
     const[search, setSearch] = useState(''); //when the user enters dates it will be stored to this state to fetch a request based on this 
-    const[date,setDate] = useState('');
-    const[startDate,setStartDate] = useState(null);
-    const[endDate,setEndDate] = useState(null);
+    const[date,setDate] = useState({
+        startDate: '',
+        endDate: '',
+    });
 
     const handleSearch = (e) =>{
         //code to execute when search button is clicked
@@ -13,19 +14,14 @@ function Navbar2(){
         console.log("search started", e.target);
     }
 
-    const handleStartDate = (e) => {
+    const handleChange = (e) => {
         e.preventDefault();
-        setStartDate(e.target.value);
-        console.log("start date set!", e.target.value)
+        let value = e.target.value;
+        // let endDateCheck = date.endDate < date.startDate ? setDate : window.alert ("please select a date great date the start date");
+        //I want validation on this date, but I have to see how to implement it 
+
     }
 
-    const handleEndDate = (e) => {
-        e.preventDefault();
-
-        // setStartDate > setEndDate ? null : setEndDate(e.target.value); trying to figure out date validation
-
-        console.log("end date set!", e.target.value)
-    }
 
     // create a reset search button. Can be as simple and reseting dates.
 
@@ -40,10 +36,18 @@ function Navbar2(){
             <div className="navbar-end">
                 <form> 
                     {/* add handleSearch onclick function on the form */}
-                <label>start date</label>
-               <input className="input h-10 w-35" type="date" onChange={handleStartDate}  />
-               <label>end date</label>
-               <input className="input h-10 w-35" type="date" onChange={handleEndDate}/>
+                <label htmlFor="startDate">start date</label>
+               <input className="input h-10 w-35" 
+                    id="startDate"
+                    type="date" 
+                    value={date.startDate}
+                    onChange={handleChange}  />
+               <label htmlFor="endDate">end date</label>
+               <input className="input h-10 w-35" 
+                        id="endDate"
+                        type="date" 
+                        value={date.endDate}
+                        onChange={handleChange}/>
                {/* this input shoudl be disabled until start date is entered */}
                <button className="btn btn-outline btn-primary" >Search</button>
                </form>
