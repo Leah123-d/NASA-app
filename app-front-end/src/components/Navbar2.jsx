@@ -38,12 +38,14 @@ function Navbar2(){
                     {/* add handleSearch onclick function on the form */}
                 <label htmlFor="startDate">start date</label>
                <input className="input h-10 w-35" 
+                    placeholder=""
                     id="startDate"
                     type="date" 
                     value={date.startDate}
                     onChange={handleChange}  />
                <label htmlFor="endDate">end date</label>
                <input className="input h-10 w-35" 
+                        placeholder=""
                         id="endDate"
                         type="date" 
                         value={date.endDate}

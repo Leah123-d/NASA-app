@@ -1,7 +1,21 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Card(){
+
+    //  function NASADatafromBE (){
+    //   useEffect(() => {
+    //     fetch('/api/NASAData')
+    //     .then((res) => res.json())
+    //     .then (data => {
+    //       console.log(data);
+    //     })
+    //     .catch(error => {
+    //       console.error('Error:', error);
+    //     });
+    //   }, []);
+    // }
+    
     
     return(
         <>
@@ -25,13 +39,12 @@ function Card(){
                     </div>
                     <input type="text" id="title" placeholder="enter title"></input>
                     <button></button>
-                {/* <div className="App">
+                <div className="App">
                     <h1>React Website with an Express backend</h1>
-                    <button  onClick={connectToBackend}>
+                    {/* <button  onClick={NASADatafromBE}>
                     Send Request to Backend
-                    </button>
-                    <p>{data}</p>
-                </div> */}
+                    </button> */}
+                </div>
             </div>
             </div>
             

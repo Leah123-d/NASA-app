@@ -31,7 +31,7 @@ app.get('/api', (req,res) => { //creates an endpoint for the route/api
 
 const NASAData = async () =>  {
   try{
-    console.log("in NASA function");
+    console.log("Fetching NASA data...");
     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${authToken}`) //get the URL and pass it to the fetch function as a string
     //once the fetch resolves we have to check if the response is okay
 
@@ -39,21 +39,25 @@ const NASAData = async () =>  {
       throw new Error("Media not found");
     }
     const data = await response.json();//the response is converted to json and this returns a promise 
-    console.log(data);
+    console.log("NASA data", data);
+    return data; // Return the fetched data
+
   }
   catch(error){
-    console.log(error);
+    console.error("Error fetching data: ", error);
+    return { error: error.message}
   }
 }
 
 //NASAData(); //have to call the function to make it run 
 
-app.get('/api/NASAData', (req,res) => { //creates an endpoint for the route/api
-  console.log('I have NASA data');
-  console.log(NASAData);
-  res.json(NASAData());
-})
+app.get('/api/NASAData', async (req,res) => { //creates an endpoint for the route/api
+  console.log('API request received for NASA Data');
 
+  const data = await NASAData(); //await the data before sending 
+  res.json(data);
+});
+//this is the fetch for the route for day of photo only 
 
 
 
