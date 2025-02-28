@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useEffect } from 'react';
 import { FaImage } from "react-icons/fa6";
@@ -39,8 +40,6 @@ function Card({ archiveData, APOD }){
 								<div className="badge badge-secondary">
 									{archiveData.explanation.includes("planet") ? (<TbPlanet />) : (<TbWashDrycleanOff />)
 									} </div>
-
-
 								</h2>
 								<p>{archiveData.explanation}</p>
 								<div className="card-actions justify-end">
@@ -49,8 +48,6 @@ function Card({ archiveData, APOD }){
 								</div>
 							</>
 							) : (
-						
-						
 						<>
 						<figure>
 								<img
@@ -72,7 +69,9 @@ function Card({ archiveData, APOD }){
 									 </>)
 									} </div>
 								<div className="badge badge-secondary">
-									{APOD?.explination?.includes("planet") ? (<TbWashDrycleanOff />) : (<TbPlanet />)
+									
+									{
+									APOD?.explanation?.includes("Planet") ? (<TbPlanet />) :(<TbPlanet />)
 									
 									}
 								</div>
