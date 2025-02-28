@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { FcPicture } from "react-icons/fc";
+import { FaImage } from "react-icons/fa6";
 import { TbPlanet } from "react-icons/tb";
 import { TiVideo } from "react-icons/ti";
 import { TbWashDrycleanOff } from "react-icons/tb";
@@ -21,14 +21,26 @@ function Card({ archiveData, APOD }){
 								<div className="card-body">
 								<h2 className="card-title">
 								{archiveData.title}
-								<FcPicture />
-								<TbPlanet />
-								<TiVideo />
-								<TbWashDrycleanOff />
+
 								{/* not a planet symbol */}
 								{/* need to make these icons dynamically appear */}
-								<div className="badge badge-secondary">{archiveData.media_type}</div>
-								<div className="badge badge-secondary">HOLD FOR API PLANET TRUE/FALSE ICON</div>
+								<div className="badge badge-secondary">
+								<div className="badge badge-secondary">
+									{archiveData.media_type === "image" ? (
+										<>
+									 	<FaImage /> {archiveData.media_type} 
+									 </>
+									 ) : ( 
+									 <>
+									 <TiVideo /> {archiveData.media_type} 
+									 </>)
+									} </div>
+									</div>
+								<div className="badge badge-secondary">
+									{archiveData.explanation.includes("planet") ? (<TbPlanet />) : (<TbWashDrycleanOff />)
+									} </div>
+
+
 								</h2>
 								<p>{archiveData.explanation}</p>
 								<div className="card-actions justify-end">
@@ -47,14 +59,23 @@ function Card({ archiveData, APOD }){
 						<div className="card-body">
 								<h2 className="card-title">
 								{APOD?.title}
-								<FcPicture />
-								<TbPlanet />
-								<TiVideo />
-								<TbWashDrycleanOff />
 								{/* not a planet symbol */}
 								{/* need to make these icons dynamically appear */}
-								<div className="badge badge-secondary">{APOD?.media_type}</div>
-								<div className="badge badge-secondary">HOLD FOR API PLANET TRUE/FALSE ICON</div>
+								<div className="badge badge-secondary">
+									{APOD?.media_type === "image" ? (
+										<>
+									 	<FaImage /> {APOD?.media_type} 
+									 </>
+									 ) : ( 
+									 <>
+									 <TiVideo /> {APOD?.media_type} 
+									 </>)
+									} </div>
+								<div className="badge badge-secondary">
+									{APOD?.explination?.includes("planet") ? (<TbWashDrycleanOff />) : (<TbPlanet />)
+									
+									}
+								</div>
 								</h2>
 								<p>{APOD?.explanation}</p>
 								<div className="card-actions justify-end">
