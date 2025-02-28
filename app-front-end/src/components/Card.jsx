@@ -1,5 +1,9 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import { FcPicture } from "react-icons/fc";
+import { TbPlanet } from "react-icons/tb";
+import { TiVideo } from "react-icons/ti";
+import { TbWashDrycleanOff } from "react-icons/tb";
 
 function Card(){ 
 
@@ -31,6 +35,12 @@ function Card(){
                 <div className="card-body">
                     <h2 className="card-title">
                     {APOD.title}
+                    <FcPicture />
+                    <TbPlanet />
+                    <TiVideo />
+                    <TbWashDrycleanOff />
+                    {/* not a planet symbol */}
+                    {/* need to make these icons dynamically appear */}
                     <div className="badge badge-secondary">{APOD.media_type}</div>
                     <div className="badge badge-secondary">HOLD FOR API PLANET TRUE/FALSE ICON</div>
                     </h2>

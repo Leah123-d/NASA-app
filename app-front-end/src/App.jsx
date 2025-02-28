@@ -6,9 +6,7 @@ import Footer from './components/Footer.jsx'
 import { useState, useEffect } from 'react';
 
 function App() {
-
- 
-
+  
   return (
     <>
       <Navbar2 />
