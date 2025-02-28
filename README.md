@@ -72,6 +72,7 @@ Here are ideas that I would like to add to this project in the future:
 1. Additional search options, there is an API that can take parameters of a start and end date to return a range of media
 2. Video media_types are not displaying correctly. The link is available, however, it is not rendering
 3. Implement media queries to make this page responsive and adjust to a variety of screen sizes
+4. Add a current day button, this way users can view the current day photo instead of entering the day
 
 
 ## Project Preview: 
