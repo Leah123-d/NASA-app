@@ -25,12 +25,13 @@ function App() {
   FetchAPOD(); }, []);
 
   //We are fetching the data that is at the url /api/archives which at the backend is connection to the NASA API archives
-  // const data = await response.json();
-
+  
+  //
   const fetchArchive = async (e) => {
 		e.preventDefault();
     try{
     const response = await fetch(`/api/archives?date=${date}`); 
+    const data = await response.json();
     return setArchiveData(data); //store data in state 
     }catch(error){
     console.error("error fetching data: ", error)
