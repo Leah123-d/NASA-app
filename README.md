@@ -1,5 +1,7 @@
 # Welcome to NASA-app! 
 
+I created a wrapper around the NASA API to return requests to a front-end. 
+
 ## Project Objective:
 
 This is my first full stack application build. 
@@ -51,7 +53,7 @@ npm install express
 4. In .env enter the belwo replace the ENTERAPIKEYHERE with the API generated from NASA:
 
 `````````
-authToken = ENTERAPIKEYHERE
+authToken = DEMO_KEY
 `````````
 
 ### How to run:
