@@ -60,10 +60,13 @@ For Frontend
 ## Future Implementation: 
 
 Here are ideas that I would like to add to this project in the future: 
-1. Additional search options, there is an API that can take parameters of a start and end date to return a range of media
-2. Video media_types are not displaying correctly. The link is available, however, it is not rendering
-3. Implement media queries to make this page responsive and adjust to a variety of screen sizes
-4. Add a current day button, this way users can view the current day photo instead of entering the day
+
+1. Additional search options, adding an end date input will allow the users to select a range of media. 
+2. Video media_types are not displaying correctly. The link is available, however, it is not rendering with a preview. 
+3. Implement media queries to make this page responsive and adjust to a variety of screen sizes.
+4. Add a current day button, this way users can view the current day photo instead of entering the day.
+5. Add testing for front end components. 
+6. Add error handling for the UI where the user can recieve a message why an image did not load or return any results. 
 
 
 ## Project Preview: 
