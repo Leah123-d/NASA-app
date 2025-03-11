@@ -6,6 +6,8 @@ import { TbPlanet } from "react-icons/tb";
 import { TiVideo } from "react-icons/ti";
 import { TbWashDrycleanOff } from "react-icons/tb";
 
+
+
 function Card({ archiveData, APOD }){ 
     
 	return(

@@ -50,7 +50,7 @@ function App() {
 			fetchArchive = {fetchArchive}
 			/>
       <Card
-        archiveData = {archiveData}
+        archiveData = {archiveData} 
         APOD = {APOD} />
       <Footer
       archiveData = {archiveData}
