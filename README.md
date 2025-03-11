@@ -1,6 +1,6 @@
 # Welcome to NASA-app! 
 
-I created a wrapper around the NASA API to return requests to a front-end. 
+I designed a wrapper around the NASA API to return requests to a front-end. 
 
 ## Project Objective:
 
@@ -17,6 +17,7 @@ React
 Express.js
 Node.js
 VSCode 
+Tailwind CSS
 
 ### Additional Resources
 A [website](https://apod.nasa.gov/apod/ap250216.html) displaying Astronomy Picture of the Day data
@@ -25,36 +26,24 @@ A [tutorial](https://liderrick.github.io/apodHowTo/index.html) for working with 
 
 ## Installation Instructions
 
-1. Create a folder on your computer
-2. Clone this repository to the folder in step 1. 
-3. Open the cloned repository in a code editor 
+1. Clone this repository to the folder
+2. Open the cloned repository in a code editor 
 
 
 ### Environment setup: 
 
-At the root level of your project run the following installation commands 
+Change directories to the server folder and run: 
 
 `````````
 npm install
-`````````
-`````````
-npm install dotenv
-`````````
-`````````
-npm install express
 `````````
 
 
 ### api key setup:
 
-1. Click this [link](https://api.nasa.gov/) to sign up for and sign up to generate a key
-2. Check your email for the api key
-3. In your code editor create a file named .env
-4. In .env enter the belwo replace the ENTERAPIKEYHERE with the API generated from NASA:
+The project is set up with a demo key. To run the application edit the .envexample to .env. 
 
-`````````
-authToken = DEMO_KEY
-`````````
+If you would like to sign-up for an API key register [here](https://api.nasa.gov/).
 
 ### How to run:
 For Backend
