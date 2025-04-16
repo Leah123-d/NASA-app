@@ -1,10 +1,19 @@
+import { fileURLToPath } from 'url';
+import path from 'path';
 import express from 'express'
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
+const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const REACT_BUILD_DIR = path.join(__dirname, "..", "client", "dist");
+app.use(express.static(REACT_BUILD_DIR));
 
 dotenv.config();
-const app = express();
+
 const port = process.env.PORT || 3000;
 
 
@@ -13,8 +22,9 @@ app.use(bodyParser.json()) //Middleware to parse JSON
 const { authToken } = process.env;
 
 app.get('/', (req,res) => {
-  res.send("Hello! Welcome to the server!")
-})
+  // res.send("Hello! Welcome to the server!")
+  res.sendFile(path.join(REACT_BUILD_DIR, "index.html"));
+});
 
 
 //this route will only be fetching data for the current day's photo
